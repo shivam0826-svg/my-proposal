@@ -1,0 +1,655 @@
+/* =========================================
+    PROPOSAL PROJECT - PREMIUM ROMANTIC UI
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, #fff6f9 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ffe8ef 0%, transparent 35%),
+        linear-gradient(135deg, #fff5f8, #fde8ef);
+    color: #542c3a;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND HEARTS
+========================================= */
+
+.hearts::before,
+.hearts::after {
+    content: "♡  ♥  ♡  ♥  ♡  ♥  ♡";
+    position: fixed;
+    left: 0;
+    width: 100%;
+    font-size: 22px;
+    letter-spacing: 45px;
+    color: rgba(210, 73, 116, 0.12);
+    pointer-events: none;
+    z-index: 0;
+    animation: floatingHearts 10s linear infinite;
+}
+
+.hearts::before {
+    top: 15%;
+}
+
+.hearts::after {
+    top: 70%;
+    animation-delay: -5s;
+}
+
+@keyframes floatingHearts {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 45px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress {
+    position: fixed;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.progress span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e8b7c7;
+    transition: 0.3s ease;
+}
+
+.progress span.active {
+    background: #cf4f78;
+    transform: scale(1.25);
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+    width: 100%;
+    max-width: 720px;
+    padding: 55px 55px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    box-shadow:
+        0 25px 70px rgba(146, 56, 88, 0.14),
+        0 5px 20px rgba(146, 56, 88, 0.07);
+    text-align: center;
+    backdrop-filter: blur(12px);
+    animation: cardAppear 0.8s ease;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.small-text {
+    color: #a15b73;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.page-number {
+    color: #bd7088;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #682f45;
+    font-size: 38px;
+    line-height: 1.25;
+    margin-bottom: 22px;
+}
+
+h2 {
+    color: #7c3852;
+    font-size: 25px;
+}
+
+p {
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ICONS
+========================================= */
+
+.question-icon,
+.chai-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+    animation: gentleFloat 3s ease-in-out infinite;
+}
+
+.big-heart {
+    font-size: 65px;
+    margin-bottom: 12px;
+    animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #d0527b, #b83e67);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(190, 63, 103, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(190, 63, 103, 0.32);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   QUESTION OPTIONS
+========================================= */
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.options button {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #f0c4d2;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.75);
+    color: #653447;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.options button:hover {
+    border-color: #d65a80;
+    background: #fff4f7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(197, 73, 112, 0.1);
+}
+
+.options button.selected {
+    background: #fff0f4;
+    border-color: #cf4f78;
+    color: #a7355d;
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    margin-top: 12px;
+    padding: 17px;
+    resize: vertical;
+    border: 2px solid #efc5d3;
+    border-radius: 18px;
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: #5c3040;
+    background: #fffafb;
+    transition: 0.25s ease;
+}
+
+textarea:focus {
+    border-color: #cf4f78;
+    box-shadow: 0 0 0 4px rgba(207, 79, 120, 0.08);
+}
+
+textarea::placeholder {
+    color: #b48a99;
+}
+
+
+/* =========================================
+   SHAYARI
+========================================= */
+
+.shayari-card {
+    max-width: 820px;
+}
+
+.shayari-intro {
+    color: #815364;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.shayari {
+    padding: 38px 30px;
+    border-radius: 24px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 244, 247, 0.95),
+        rgba(255, 249, 250, 0.95)
+    );
+    border: 1px solid #f3d5df;
+    box-shadow: inset 0 0 25px rgba(198, 74, 111, 0.04);
+}
+
+.shayari p {
+    margin-bottom: 25px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.9;
+    color: #74364d;
+}
+
+.shayari p:last-child {
+    margin-bottom: 0;
+}
+
+.shayari-highlight {
+    font-style: normal !important;
+    font-size: 35px !important;
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   CHAI PAGE
+========================================= */
+
+.chai-page-card {
+    max-width: 720px;
+}
+
+.chai-message {
+    font-size: 17px;
+    color: #704556;
+    line-height: 1.8;
+    margin: 28px 0;
+}
+
+.chai-message p {
+    margin-bottom: 18px;
+}
+
+.special-line {
+    margin-top: 30px;
+    font-size: 21px;
+    color: #863c58;
+}
+
+.chai-question {
+    margin-top: 35px;
+}
+
+.chai-question h2 {
+    margin-bottom: 20px;
+}
+
+.custom-answer {
+    margin-top: 22px;
+    animation: answerAppear 0.4s ease;
+}
+
+.custom-answer p {
+    color: #875266;
+    margin-bottom: 8px;
+}
+
+@keyframes answerAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chai-note {
+    margin-top: 25px;
+    color: #a06f80;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSE
+========================================= */
+
+.response {
+    margin-top: 20px;
+    min-height: 25px;
+    color: #a3385d;
+    font-weight: 600;
+    line-height: 1.6;
+    animation: answerAppear 0.4s ease;
+}
+
+
+/* =========================================
+   FINAL PROPOSAL
+========================================= */
+
+.proposal-card {
+    max-width: 720px;
+}
+
+.love-message {
+    padding: 25px 30px;
+    margin: 25px 0;
+    background: #fff7f9;
+    border-radius: 20px;
+    border: 1px solid #f3d7e0;
+}
+
+.love-message p {
+    color: #6d4150;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.love-message p:last-child {
+    margin-bottom: 0;
+}
+
+.final-question {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid #f0d4de;
+}
+
+.final-question p {
+    color: #9b6678;
+    margin-bottom: 15px;
+}
+
+.final-question h2 {
+    margin-bottom: 18px;
+}
+
+.final-question h1 {
+    font-size: 31px;
+    color: #b63863;
+}
+
+
+/* =========================================
+   PROPOSAL BUTTONS
+========================================= */
+
+.proposal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.proposal-buttons button {
+    border: none;
+    padding: 14px 27px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #d64f78, #b93360);
+    color: white;
+    box-shadow: 0 10px 25px rgba(190, 55, 96, 0.25);
+}
+
+.think-btn {
+    background: #fff1f5;
+    color: #9d4e69;
+    border: 1px solid #efc5d3 !important;
+}
+
+.proposal-buttons button:hover {
+    transform: translateY(-3px);
+}
+
+.response {
+    color: #b63863;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        padding: 55px 14px 30px;
+    }
+
+    .card {
+        padding: 38px 22px;
+        border-radius: 23px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .shayari {
+        padding: 28px 18px;
+    }
+
+    .shayari p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .shayari-intro {
+        font-size: 15px;
+    }
+
+    .special-line {
+        font-size: 18px;
+    }
+
+    .final-question h1 {
+        font-size: 26px;
+    }
+
+    .love-message {
+        padding: 20px 17px;
+    }
+
+    .love-message p {
+        font-size: 15px;
+    }
+
+    .options button {
+        font-size: 15px;
+        padding: 15px 12px;
+    }
+
+    .btn {
+        padding: 13px 25px;
+    }
+
+    .big-heart {
+        font-size: 55px;
+    }
+}
+
+/* =================================
+    FINAL RESPONSE
+================================= */
+
+.yes-message,
+.think-message {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 20px;
+    background: #fff5f8;
+    border: 1px solid #f1ccd8;
+    animation: answerAppear 0.6s ease;
+}
+
+.yes-message h2,
+.think-message h2 {
+    margin-bottom: 12px;
+}
+
+.yes-message p,
+.think-message p {
+    color: #744353;
+    margin-top: 8px;
+}
+
+.celebrate-heart {
+    font-size: 45px;
+    margin-bottom: 10px;
+    animation: heartbeat 1s ease-in-out infinite;
+}
+
+
+/* Floating hearts */
+
+.floating-heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 24px;
+    pointer-events: none;
+    z-index: 999;
+    animation: heartRise 4s ease-out forwards;
+}
+
+@keyframes heartRise {
+
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.2) rotate(15deg);
+        opacity: 0;
+    }
+}

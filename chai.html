@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>One Little Invitation ☕❤️</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="hearts"></div>
+
+    <main class="page">
+
+        <div class="progress">
+            <span class="active"></span>
+            <span class="active"></span>
+            <span class="active"></span>
+            <span class="active"></span>
+        </div>
+
+        <div class="card chai-page-card">
+
+            <div class="chai-icon">
+                ☕
+            </div>
+
+            <p class="small-text">
+                One little invitation...
+            </p>
+
+            <h1>
+                Ek chhoti si guzarish ❤️
+            </h1>
+
+            <div class="chai-message">
+
+                <p>
+                    Shayari mein toh chai ka zikr ho hi gaya...
+                </p>
+
+                <p>
+                    Toh socha, kyun na ek chhoti si
+                    <strong>chai ki invitation</strong> bhi de di jaye. ☕
+                </p>
+
+                <p class="special-line">
+                    Agar tum chaho toh...
+                    <br>
+                    <strong>hum kabhi chai par bhi mil sakte hain. ❤️</strong>
+                </p>
+
+            </div>
+
+
+            <div class="chai-question">
+
+                <h2>
+                    Toh... kya khayal hai? 👀
+                </h2>
+
+                <div class="options">
+
+                    <button onclick="chaiYes(this)">
+                        ☕ Haan, kyun nahi ❤️
+                    </button>
+
+                    <button onclick="chaiNo(this)">
+                        🌸 Abhi nahi
+                    </button>
+
+                    <button onclick="showChaiAnswer()">
+                        ✍️ Main khud kuch kehna chahti/chahta hoon
+                    </button>
+
+                </div>
+
+
+                <!-- CUSTOM ANSWER -->
+
+                <div
+                    class="custom-answer"
+                    id="chaiAnswerBox"
+                    style="display: none;">
+
+                    <p>
+                        Jo kehna hai, apne words mein keh do… ❤️
+                    </p>
+
+                    <textarea
+                        id="chaiAnswer"
+                        placeholder="Write whatever you feel..."></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div id="chaiResponse" class="response"></div>
+
+
+            <p class="chai-note">
+                No pressure… bas ek chhoti si invitation hai. :)
+            </p>
+
+
+            <a href="proposal.html" class="btn">
+                One Last Thing… ❤️
+            </a>
+
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Let's Know You 🌸</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="hearts"></div>
+
+    <main class="page">
+
+        <div class="progress">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="card question-card">
+
+            <p class="page-number">01 / 03</p>
+
+            <div class="question-icon">🌸</div>
+
+            <h1>Let's start with something simple.</h1>
+
+            <p class="question">
+                What's one little thing that can instantly make your day better?
+            </p>
+
+            <div class="options">
+
+                <button onclick="selectOption(this)">
+                    🎵 A good song
+                </button>
+
+                <button onclick="selectOption(this)">
+                    ☕ My favourite thing
+                </button>
+
+                <button onclick="selectOption(this)">
+                    💬 A good conversation
+                </button>
+
+                <button onclick="selectOption(this)">
+                    ✨ Something unexpected
+                </button>
+
+            </div>
+
+            <div class="custom-answer">
+
+                <p>Or maybe you have your own answer? 👀</p>
+
+                <textarea
+                    id="answer1"
+                    placeholder="Write whatever comes to your mind..."></textarea>
+
+            </div>
+
+            <a href="question2.html" class="btn">
+                That's Interesting → 
+            </a>
+
+            <p class="bottom-note">
+                No right or wrong answer. Just be yourself. ❤️
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
